@@ -1,9 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from typing import Generator
 from core.config import settings
 
 SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
+print(SQLALCHEMY_DATABASE_URL)
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 #if you don't want to install postgres or any database, use sqlite, a file system based database,
@@ -23,3 +25,7 @@ def get_db() -> Generator:
         yield db
     finally:
         db.close()
+
+
+Base = declarative_base()
+
