@@ -1,9 +1,12 @@
+# execute with:
+# cd C:\Users\giovann\PycharmProjects\FastAPImdw\backend
+# uvicorn main:app --reload
+
 from fastapi import FastAPI
 from core.config import settings
 from fastapi.staticfiles import StaticFiles
-from db.session import engine
+from db.session import engine, Base
 from apis.base import api_router
-from db.base import Base
 
 
 def include_router(app):

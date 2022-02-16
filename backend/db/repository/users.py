@@ -4,8 +4,14 @@ from db.models.users import User
 
 
 def create_new_user(user: UserCreate, db: Session):
-    utente_db = User(**user.dict())
-    db.add(utente_db)
+    user_db = User(**user.dict())
+    db.add(user_db)
     db.commit()
-    db.refresh(utente_db)
-    return utente_db
+    db.refresh(user_db)
+    return user_db
+
+
+def retrieve_users(db: Session) -> list[UserCreate]:
+    # db.query() è la select, con .all() ho i dati
+    users_db = db.query(User).all()
+    return users_db
