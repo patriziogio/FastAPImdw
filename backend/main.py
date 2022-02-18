@@ -8,7 +8,6 @@ from fastapi.staticfiles import StaticFiles
 from db.session import engine, Base
 from apis.base import api_router
 
-
 def include_router(app):
     app.include_router(api_router)
 

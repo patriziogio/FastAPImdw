@@ -10,6 +10,8 @@ class Settings:
     PROJECT_NAME: str = "User Management"
     PROJECT_VERSION: str = "1.0.0"
 
+    SUPER_USER: str = "UE009053"
+
     POSTGRES_USER: str = os.getenv("POSTGRES_USER")
     POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
     POSTGRES_SERVER: str = os.getenv("POSTGRES_SERVER", "localhost")
